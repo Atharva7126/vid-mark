@@ -5,6 +5,7 @@ import YouTube from 'react-youtube'
 import { useMutation } from 'convex/react'
 import { api } from '@/convex/_generated/api'
 import { Id } from '@/convex/_generated/dataModel'
+import { YouTubeEvent, YouTubePlayer } from 'react-youtube'
 
 interface VideoPlayerProps {
     videoId: string
@@ -17,20 +18,21 @@ const VideoPlayer = ({
     savedTime = 0,
     videoDocId
 }: VideoPlayerProps) => {
-    const playerRef = useRef<any>(null)
+    const playerRef = useRef<YouTubePlayer | null>(null)
     const [lastSaved, setLastSaved] = useState(0)
     const updateProgress = useMutation(api.video.updateProgress)
 
-    const handleReady = (event: any) => {
-        playerRef.current = event.target
+    const handleReady = (event: YouTubeEvent) => {
+        const player = event.target as YouTubePlayer;
+        playerRef.current = player;
         if (savedTime > 0) {
-            event.target.seekTo(savedTime, true)
+            player.seekTo(savedTime, true);
         }
-    }
+    };
 
     useEffect(() => {
         const interval = setInterval(() => {
-            if (!playerRef.current || !playerRef.current.getCurrentTime || !videoDocId) return
+            if (!playerRef.current || typeof playerRef.current.getCurrentTime !== 'function' || !videoDocId) return
 
             const currentTime = Math.floor(playerRef.current.getCurrentTime())
 
@@ -41,7 +43,7 @@ const VideoPlayer = ({
         }, 5000)
 
         return () => clearInterval(interval)
-    }, [videoDocId])
+    }, [videoDocId, lastSaved, updateProgress])
 
     const opts = {
         height: '100%',

@@ -125,7 +125,7 @@ const handleDelete = async () => {
 
 export default VideoCard;
 
-VideoCard.Skeleton = () => {
+VideoCard.Skeleton = (() => {
   return (
     <div className="relative border rounded-xl overflow-hidden shadow-sm w-full max-w-sm">
       <Skeleton className="w-full h-40" />
@@ -136,4 +136,6 @@ VideoCard.Skeleton = () => {
       </div>
     </div>
   );
-}
+}) as React.FC;
+
+VideoCard.Skeleton.displayName = "VideoCardSkeleton";

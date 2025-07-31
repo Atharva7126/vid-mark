@@ -16,14 +16,6 @@ import { ConfirmModal } from "@/components/modals/confirm-modal";
 import { useChatStore } from "@/hooks/chats";
 import { toast } from "sonner";
 
-// Define what a chat message looks like
-interface ChatMessage {
-  _id: Id<"chats">;
-  role: "user" | "assistant";
-  message: string;
-  timestamp: number;
-}
-
 interface ChatInterfaceProps {
   videoId: Id<"videos">;
   youtubeVideoId: string;
@@ -196,7 +188,7 @@ export function ChatInterface({ videoId, youtubeVideoId }: ChatInterfaceProps) {
     );
   };
 
-  const handleCopy = async (message: any) => {
+  const handleCopy = async (message: string) => {
     await navigator.clipboard.writeText(message)
     setCopied(true);
     setTimeout(() => setCopied(false), 1500)
@@ -251,7 +243,7 @@ export function ChatInterface({ videoId, youtubeVideoId }: ChatInterfaceProps) {
           <div className="space-y-4">
             {currentChatHistory?.length === 0 && (
               <div className="text-center text-gray-500 dark:text-gray-300 py-8">
-                <p>👋 Hi! I'm here to help you understand this video.</p>
+                <p>👋 Hi! I&apos;m here to help you understand this video</p>
                 <p className="text-sm mt-2">Ask me anything about the content!</p>
                 {isCurrentlyLoadingTranscript && (
                   <p className="text-xs mt-2 text-blue-600">Fetching transcript…</p>
