@@ -15,7 +15,6 @@ import { useSearch } from "@/hooks/use-search"
 import { api } from "@/convex/_generated/api"
 import { FaRegStar, FaStar } from "react-icons/fa"
 import { CheckCircle, Trash } from "lucide-react"
-import { cn } from "@/lib/utils"
 import { Button } from "./ui/button"
 import { ConfirmModal } from "./modals/confirm-modal"
 

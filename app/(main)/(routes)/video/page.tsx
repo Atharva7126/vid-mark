@@ -5,7 +5,6 @@ import MarkVideo from '../../_components/markVideo'
 import { FilterToggle } from '../../_components/filter'
 import { Search } from 'lucide-react'
 import { useSearch } from '@/hooks/use-search'
-import { useMediaQuery } from 'usehooks-ts'
 
 const Video = () => {
     const [filter, setFilter] = useState<"all" | "completed" | "watching" | "stared">("all")

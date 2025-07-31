@@ -4,7 +4,6 @@ import Link from 'next/link'
 import { UserButton } from '@clerk/nextjs'
 import { usePathname } from 'next/navigation'
 import { cn } from '@/lib/utils'
-import { ModeToggle } from '@/components/ui/mode-toggle'
 import { useScroll } from '@/hooks/use-scroll'
 import ThemeToggleButton from '@/components/ui/theme-toggle-button'
 
