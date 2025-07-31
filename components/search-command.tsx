@@ -2,7 +2,6 @@
 import { useEffect, useState } from "react"
 import { useMutation, useQuery } from "convex/react"
 import { useRouter } from "next/navigation"
-import { useUser } from "@clerk/nextjs"
 import Image from "next/image"
 import {
     CommandDialog,
@@ -19,7 +18,6 @@ import { Button } from "./ui/button"
 import { ConfirmModal } from "./modals/confirm-modal"
 
 export const SearchCommand = () => {
-    const { user } = useUser()
     const router = useRouter()
     const video = useQuery(api.video.listByUser, {})
     const toggleStar = useMutation(api.video.toggleStar)

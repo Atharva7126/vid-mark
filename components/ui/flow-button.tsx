@@ -1,7 +1,7 @@
 'use client';
 import { PlusCircleIcon } from 'lucide-react';
 
-export function FlowButton({ text = "Modern Button", type }: { text?: string, type?: "button" | "submit" }) {
+export function FlowButton({ text = "Modern Button" }: { text?: string, type?: "button" | "submit" }) {
   return (
     <button className="group relative flex items-center gap-1 overflow-hidden rounded-[100px] border-[1.5px] border-zinc-400/40 dark:border-zinc-700/40 bg-transparent px-8 py-2 text-sm font-semibold text-zinc-900 dark:text-zinc-100 cursor-pointer transition-all duration-[600ms] ease-[cubic-bezier(0.23,1,0.32,1)] hover:border-transparent hover:text-white dark:hover:text-black hover:rounded-[12px] active:scale-[0.95]">
       <PlusCircleIcon 
