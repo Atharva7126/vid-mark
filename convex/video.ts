@@ -234,7 +234,6 @@ export const getWatchStats = query({
       return sum + (video.watchProgress ?? 0);
     }, 0);
 
-    const totalHours = totalSeconds / 3600;
-    return totalHours;
+    return totalSeconds;
   },
 });
