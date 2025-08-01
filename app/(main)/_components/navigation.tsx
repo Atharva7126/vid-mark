@@ -44,7 +44,7 @@ const Navigation = () => {
               pathname === '/settings' && 'text-black dark:text-white'
             )}
           >
-            Settings
+            Dashboard
           </Link>
         </div>
 

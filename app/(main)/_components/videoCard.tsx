@@ -57,7 +57,7 @@ const handleDelete = async () => {
 
   return (
     <div onClick={onClick} className={cn(
-      "relative border cursor-pointer hover:scale-102 transition-all rounded-xl overflow-hidden",
+      "relative border-2 border-transparent cursor-pointer hover:scale-102 transition-all rounded-xl overflow-hidden",
       video.stared && "border-2 border-yellow-500"
     )}>
       <Image
@@ -111,11 +111,12 @@ const handleDelete = async () => {
         </div>
         <Progress
           value={video.isCompleted ? 100 : getPercentage(parseISO8601(video.duration), video.watchProgress ?? 0)}
-          className={
+          className={cn(
+            "mt-2",
             video.isCompleted
               ? "bg-muted [&>div]:bg-green-600"
               : "bg-muted [&>div]:bg-yellow-500"
-          }
+          )}
         />
 
       </div>

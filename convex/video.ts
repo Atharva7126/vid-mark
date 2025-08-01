@@ -104,7 +104,7 @@ export const GetisWatchingVideos = query({
             .query("videos")
             .withIndex("by_userId", (q) => q.eq("userId", userId))
             .filter((q) =>
-                q.eq(q.field("isWatching"), true)
+                q.gt(q.field("watchProgress"), 0)
             )
             .collect();
 
