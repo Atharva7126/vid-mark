@@ -1,5 +1,5 @@
 export function extractVideoId(url: string): string | null {
-  const regExp = /(?:youtube\.com.*(?:\?|&)v=|youtu\.be\/)([^&\n?#]+)/;
+  const regExp = /(?:youtube\.com\/(?:live\/|watch\?v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/
   const match = url.match(regExp);
   return match ? match[1] : null;
 }
@@ -20,7 +20,7 @@ export function parseISO8601(duration: string): number {
 export const fetchYouTubeData = async (videoId: string) => {
   const API_KEY = process.env.NEXT_PUBLIC_YOUTUBE_API_KEY;
   const res = await fetch(
-    `https://www.googleapis.com/youtube/v3/videos?part=snippet,contentDetails&id=${videoId}&key=${API_KEY}`
+    `https://www.googleapis.com/youtube/v3/videos?part=snippet,contentDetails,liveStreamingDetails&id=${videoId}&key=${API_KEY}`
   );
   const data = await res.json();
 
