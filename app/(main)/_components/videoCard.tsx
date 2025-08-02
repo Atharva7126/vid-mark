@@ -78,7 +78,7 @@ const handleDelete = async () => {
               alt={video.channelTitle}
               className="rounded-full"
             />
-            <span className='text-muted-foreground'>{video.channelTitle}</span>
+            <span className='text-muted-foreground truncate'>{video.channelTitle}</span>
           </div>
           <div className='text-sm items-center justify-center flex'>
             {video.isCompleted && (
