@@ -1,3 +1,26 @@
+interface PlaylistItem {
+  snippet: {
+    title: string;
+    description: string;
+    channelTitle: string;
+    thumbnails: {
+      [key: string]: { url: string };
+    };
+  };
+  contentDetails: {
+    videoId: string;
+  };
+}
+
+interface EnrichedVideo {
+  videoId: string;
+  title: string;
+  thumbnail: string;
+  duration: string;
+  channelTitle: string;
+  channelId: string;
+}
+
 export function extractVideoId(url: string): string | null {
   const regExp = /(?:youtube\.com\/(?:live\/|watch\?v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/
   const match = url.match(regExp);
@@ -70,7 +93,7 @@ export const fetchPlaylistDataWithVideos = async (playlistId: string) => {
 
   // Fetch all videos in the playlist
   let nextPageToken = '';
-  const allItems: any[] = [];
+  const allItems: PlaylistItem[] = [];
   let totalResults
 
   do {
@@ -91,7 +114,7 @@ export const fetchPlaylistDataWithVideos = async (playlistId: string) => {
   // Fetch video details (duration, etc.) using your existing function
   const videoIds = allItems.map(item => item.contentDetails.videoId);
 
-  const enrichedVideos: any[] = [];
+  const enrichedVideos: EnrichedVideo[] = [];
   const chunkSize = 50;
 
   for (let i = 0; i < videoIds.length; i += chunkSize) {
