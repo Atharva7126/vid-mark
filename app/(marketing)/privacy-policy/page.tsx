@@ -3,7 +3,7 @@ import React from 'react'
 
 const PrivacyPolicyPage = () => {
   return (
-    <div className="min-h-screen bg-white dark:bg-zinc-900 text-gray-800 dark:text-zinc-100 px-6 py-10">
+    <div className="min-h-screen pt-30 bg-white dark:bg-[#1F1F1F] text-gray-800 dark:text-zinc-100 px-6 py-10">
       <div className="max-w-3xl mx-auto">
         <h1 className="text-3xl font-bold mb-6">Privacy Policy for VidMark</h1>
 
