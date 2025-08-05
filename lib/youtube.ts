@@ -70,7 +70,7 @@ export const fetchPlaylistDataWithVideos = async (playlistId: string) => {
 
   // Fetch all videos in the playlist
   let nextPageToken = '';
-  let allItems: any[] = [];
+  const allItems: any[] = [];
   let totalResults
 
   do {
