@@ -9,12 +9,11 @@ VidMark is a powerful YouTube video annotation and organization tool that helps 
 
 ## ✨ Features
 
-✅ **Video Annotation & Note-taking** - Capture key insights directly from YouTube videos
-✅ **AI-Powered Summarization** - Automatically generate video summaries using GenKit AI
-✅ **Progress Analytics** - Track your learning progress with statistics
-✅ **Cross-Platform Access** - Access your notes and bookmarks from anywhere
-✅ **Dark/Light Mode** - Customizable UI for comfortable viewing
-✅ **Responsive Design** - Works seamlessly on desktop and mobile devices
+* **Video Annotation & Note-taking** - Capture key insights directly from YouTube videos
+* **AI-Powered Summarization** - Automatically generate video summaries using GenKit AI
+* **Progress Analytics** - Track your learning progress with statistics
+* **Dark/Light Mode** - Customizable UI for comfortable viewing
+* **Responsive Design** - Works seamlessly on desktop and mobile devices
 
 ---
 
